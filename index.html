@@ -4,11 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mithun Halder — Backend Engineer & ML Researcher</title>
-<meta name="description" content="Mithun Halder — backend engineer at Akij iBOS building .NET microservices and airline system integrations, and a published machine-learning researcher in Dhaka, Bangladesh." />
+<meta name="description" content="Mithun Halder — backend engineer building .NET microservices at Akij iBOS and published machine-learning researcher in Dhaka, Bangladesh." />
 <meta name="author" content="Mithun Halder" />
 <meta property="og:title" content="Mithun Halder — Backend Engineer & ML Researcher" />
 <meta property="og:description" content=".NET microservices and airline integrations at Akij iBOS · four peer-reviewed deep-learning papers · former university lecturer." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://mhalder-dev.github.io/" />
+<meta property="og:image" content="https://mhalder-dev.github.io/assets/profile.jpg" />
+<meta property="og:image:alt" content="Portrait of Mithun Halder" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Mithun Halder — Backend Engineer & ML Researcher" />
+<meta name="twitter:description" content=".NET microservices and airline integrations at Akij iBOS · four peer-reviewed deep-learning papers · former university lecturer." />
+<link rel="canonical" href="https://mhalder-dev.github.io/" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='26' fill='%2363e6a3'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2363e6a3' stroke-opacity='.35' stroke-width='9'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@500;600&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
@@ -23,7 +31,7 @@
   --text:#c3ccd2;
   --text-dim:#9aa4ac;
   --head:#f3f6f7;
-  --muted:#727d85;
+  --muted:#7f8b94;
   --accent:#63e6a3;
   --accent-2:#8ff2c0;
   --accent-deep:#2fbd7e;
@@ -54,6 +62,7 @@ body{
 }
 ::selection{background:rgba(99,230,163,.28);color:#fff}
 a{color:var(--accent);text-decoration:none;transition:color .16s ease}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 img{max-width:100%;display:block}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
@@ -85,7 +94,27 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .navlinks a:not(.nav-cta):hover::after{right:0}
 .nav-cta{color:var(--accent);border:1px solid var(--accent-line);border-radius:8px;padding:8px 15px;background:var(--accent-soft)}
 .nav-cta:hover{background:var(--accent);color:var(--accent-ink)}
-@media(max-width:820px){.navlinks a.nav-mid{display:none}}
+
+/* mobile disclosure menu (CSS-only, details/summary) */
+.nav-menu{display:none;position:relative}
+.nav-menu summary{list-style:none;cursor:pointer;display:grid;place-items:center;width:40px;height:40px;
+  border:1px solid var(--line-2);border-radius:8px;color:var(--text-dim);background:var(--surface);transition:.18s ease}
+.nav-menu summary::-webkit-details-marker{display:none}
+.nav-menu summary svg{width:18px;height:18px}
+.nav-menu summary .ic-close{display:none}
+.nav-menu[open] summary{color:var(--accent);border-color:var(--accent-line);background:var(--accent-soft)}
+.nav-menu[open] summary .ic-open{display:none}
+.nav-menu[open] summary .ic-close{display:block}
+.nav-panel{position:absolute;right:0;top:calc(100% + 12px);min-width:190px;display:flex;flex-direction:column;
+  background:var(--bg-2);border:1px solid var(--line-2);border-radius:12px;padding:8px;
+  box-shadow:0 18px 44px -12px rgba(0,0,0,.75)}
+.nav-panel a{font-family:var(--mono);font-size:.84rem;color:var(--text-dim);padding:11px 14px;border-radius:8px}
+.nav-panel a:hover{color:var(--head);background:var(--surface-2)}
+@media(max-width:820px){
+  .navlinks{gap:12px}
+  .navlinks a.nav-mid{display:none}
+  .nav-menu{display:block}
+}
 
 /* ---------- hero ---------- */
 .hero{padding:80px 0 90px}
@@ -316,6 +345,25 @@ footer .up:hover{color:var(--accent)}
   .hero .overline{font-size:.76rem}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mithun Halder",
+  "jobTitle": "Software Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Akij iBOS Ltd."
+  },
+  "url": "https://mhalder-dev.github.io/",
+  "image": "https://mhalder-dev.github.io/assets/profile.jpg",
+  "sameAs": [
+    "https://github.com/mhalder-dev",
+    "https://linkedin.com/in/mhalder007",
+    "https://scholar.google.com/citations?user=lJZWnVsAAAAJ"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -329,6 +377,19 @@ footer .up:hover{color:var(--accent)}
       <a class="nav-mid" href="#projects">Projects</a>
       <a class="nav-mid" href="#research">Research</a>
       <a class="nav-cta" href="#contact">Get in touch</a>
+      <details class="nav-menu">
+        <summary aria-label="Open navigation menu">
+          <svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </summary>
+        <div class="nav-panel">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#work">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+        </div>
+      </details>
     </div>
   </div>
 </nav>
@@ -367,7 +428,7 @@ footer .up:hover{color:var(--accent)}
 
     <div class="portrait anim d3">
       <div class="portrait-frame">
-        <img src="assets/profile.jpg" alt="Mithun Halder, backend engineer and machine-learning researcher" />
+        <img src="assets/profile.jpg" width="600" height="900" fetchpriority="high" alt="Mithun Halder, backend engineer and machine-learning researcher" />
       </div>
       <div class="meta-card">
         <div class="k">Peer-reviewed</div>
@@ -690,6 +751,11 @@ footer .up:hover{color:var(--accent)}
 <script>
   // Purely additive: keeps the footer year current. Nothing depends on JS to be visible.
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // Additive nicety: close the mobile menu after picking a section. Menu works without JS.
+  var navMenu = document.querySelector('.nav-menu');
+  if (navMenu) navMenu.querySelectorAll('.nav-panel a').forEach(function (a) {
+    a.addEventListener('click', function () { navMenu.removeAttribute('open'); });
+  });
 </script>
 </body>
 </html>
