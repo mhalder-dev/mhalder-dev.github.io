@@ -3,24 +3,29 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>404 — Page not found · Mithun Halder</title>
+<title>404 — Flight not found · Mithun Halder</title>
 <meta name="robots" content="noindex" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='26' fill='%2363e6a3'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2363e6a3' stroke-opacity='.35' stroke-width='9'/%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='8' y='8' width='84' height='84' rx='16' fill='%23121826'/%3E%3Cpath d='M8 50h84' stroke='%2307090e' stroke-width='4'/%3E%3Cpath d='M22 62 78 34M60 43l16 21M56 45 36 38' stroke='%23ffb640' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --bg:#0a0c0d;
-  --surface:#12161a;
-  --line:rgba(255,255,255,.09);
-  --text:#c3ccd2;
-  --head:#f3f6f7;
-  --muted:#7f8b94;
-  --accent:#63e6a3;
-  --accent-ink:#04140c;
-  --accent-soft:rgba(99,230,163,.12);
-  --accent-line:rgba(99,230,163,.28);
+  --bg:#07090e;
+  --board:#0d1119;
+  --tile:#151b28;
+  --tile-hi:#1d2434;
+  --line:rgba(214,226,255,.09);
+  --line-2:rgba(214,226,255,.16);
+  --text:#c7cedb;
+  --head:#f4f6fa;
+  --muted:#96a0b4;
+  --amber:#ffb640;
+  --amber-2:#ffd28a;
+  --amber-ink:#1c1204;
+  --amber-soft:rgba(255,182,64,.10);
+  --amber-line:rgba(255,182,64,.30);
+  --red:#ff7d6e;
   --sans:"Inter",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --disp:"Space Grotesk",var(--sans);
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -30,29 +35,54 @@ body{
   background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;
   min-height:100vh;display:grid;place-items:center;padding:28px;
   -webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(48ch 40ch at 92% -8%, rgba(99,230,163,.10), transparent 62%);
+  background-image:radial-gradient(52ch 42ch at 90% -6%, rgba(255,182,64,.07), transparent 62%);
   background-repeat:no-repeat;
 }
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-.card{max-width:520px;text-align:center;border:1px solid var(--line);border-radius:22px;
-  background:linear-gradient(160deg,rgba(99,230,163,.08),transparent 55%),var(--surface);padding:56px 36px}
-.code{font-family:var(--mono);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
-  border:1px solid var(--accent-line);background:var(--accent-soft);border-radius:6px;
-  display:inline-block;padding:4px 12px;margin-bottom:20px}
+a:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:4px}
+.card{max-width:560px;width:100%;text-align:center;border:1px solid var(--line-2);border-radius:18px;
+  background:var(--board);padding:44px 34px;
+  box-shadow:0 40px 100px -30px rgba(0,0,0,.9),inset 0 0 46px rgba(0,0,0,.35)}
+.top{display:flex;align-items:center;justify-content:center;gap:11px;font-family:var(--mono);
+  font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+.top .lamp{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 9px var(--red);
+  animation:lamp 1.8s ease-in-out infinite}
+@keyframes lamp{0%,100%{opacity:1}50%{opacity:.3}}
+.flaps{display:inline-flex;gap:4px;margin-bottom:22px}
+.flaps span{
+  display:inline-grid;place-items:center;min-width:1.6ch;height:2em;padding:0 .2ch;
+  font-family:var(--mono);font-weight:700;font-size:clamp(1.6rem,7vw,2.4rem);color:var(--amber-2);
+  background:linear-gradient(180deg,var(--tile-hi) 0 48%,var(--tile) 52% 100%);
+  border-radius:4px;position:relative;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 2px 3px rgba(0,0,0,.5);
+}
+.flaps span::after{content:"";position:absolute;left:0;right:0;top:calc(50% - .5px);height:1px;background:rgba(0,0,0,.55)}
 h1{font-family:var(--disp);color:var(--head);font-weight:600;letter-spacing:-.02em;
-  font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.1;margin-bottom:14px}
-p{color:var(--muted);font-size:1rem;margin-bottom:30px}
+  font-size:clamp(1.5rem,4.6vw,2.1rem);line-height:1.15;margin-bottom:12px}
+p{color:var(--muted);font-size:.98rem;margin-bottom:14px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-family:var(--mono);
+  border-top:1px dashed var(--line-2);border-bottom:1px dashed var(--line-2);
+  padding:14px 6px;margin:22px 0 30px}
+.row .k{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.row .v{font-size:.82rem;font-weight:600;color:var(--amber-2);letter-spacing:.08em}
+.row .v.red{color:var(--red)}
 .btn{font-family:var(--sans);font-weight:600;font-size:.92rem;padding:12px 22px;border-radius:10px;
-  background:var(--accent);color:var(--accent-ink);text-decoration:none;display:inline-block;transition:.18s ease}
+  background:var(--amber);color:var(--amber-ink);text-decoration:none;display:inline-block;transition:.18s ease}
 .btn:hover{transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){.top .lamp{animation:none}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
 <main class="card">
-  <span class="code">404</span>
-  <h1>This page doesn't exist.</h1>
+  <div class="top"><span class="lamp"></span>MHR INTL · Departures</div>
+  <div class="flaps" aria-hidden="true"><span>4</span><span>0</span><span>4</span></div>
+  <h1>Flight not found.</h1>
   <p>The route you followed has no destination — much like an unmapped supplier endpoint.</p>
-  <a class="btn" href="/">Back to the homepage</a>
+  <div class="row">
+    <div><div class="k">Flight</div><div class="v">MH-404</div></div>
+    <div><div class="k">Gate</div><div class="v">—</div></div>
+    <div><div class="k">Status</div><div class="v red">Cancelled</div></div>
+  </div>
+  <a class="btn" href="/">Return to terminal</a>
 </main>
 </body>
 </html>
