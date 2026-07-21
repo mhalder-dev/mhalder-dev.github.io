@@ -241,11 +241,11 @@ section+section::before,#work::before{
 .pass-band .al{font-family:var(--mono);font-weight:700;font-size:.74rem;letter-spacing:.22em}
 .pass-band svg{width:17px;height:17px}
 .pass-band .cls{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.14em}
-.pass-body{display:grid;grid-template-columns:132px 1fr;gap:16px;padding:18px}
-.pass-photo{border-radius:10px;overflow:hidden;border:1px solid var(--line-2);position:relative;background:var(--surface-2)}
-.pass-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:2/3}
+.pass-body{padding:18px}
+.pass-photo{border-radius:10px;overflow:hidden;border:1px solid var(--line-2);position:relative;background:var(--surface-2);height:340px}
+.pass-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
 .pass-photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -34px 34px -20px rgba(7,9,14,.75)}
-.pass-fields{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pass-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;min-width:0;margin-top:16px}
 .pf .k{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .pf .v{font-family:var(--mono);font-size:.86rem;font-weight:600;color:var(--head);letter-spacing:.04em;overflow-wrap:break-word}
 .pf .v small{color:var(--text-dim);font-weight:400;font-size:.72rem}
@@ -479,7 +479,7 @@ html.js .rail{display:block}
   .board .flt{display:none}
   .systems .lbl{position:static;border-right:0;border-bottom:1px solid var(--line);padding:10px 16px}
   .ticker{padding-left:0}
-  .pass-body{grid-template-columns:104px 1fr}
+  .pass-photo{height:290px}
   .pass-stamp{left:-8px;top:188px}
   .pass-band .al{font-size:.64rem;letter-spacing:.16em}
   .pass-band .cls{font-size:.56rem}
